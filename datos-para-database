@@ -1,0 +1,80 @@
+TABLA DE EMPLEADOS
+
+pk_empleato_id int 
+str_nombre str 
+int_edad
+date_fecha_nacimiento
+int_celular
+uk_int_cuenta_clve = no nullo
+str_seguro_social = no nullo
+str_rfc = no nullo
+str_curp = no nullo
+str_licencia 
+date_ingreso = no nullo
+char_recomendado = *default* No 
+
+////////////////////////////////////////////////
+
+TABLA CARGO
+uk_empledo_id = fk-empleado
+str_nombre_cargo
+str_area_cargo
+dbl_sueldo 
+datetime_jornada
+uk_str_correo
+uk_celuar = fk-str_uk_equipo_id = si / no
+uk_computadora = fk-str_uk_equipo_id = si / no
+
+////////////////////////////////////////////////
+
+TABLA EQUIPO DE COMPANIA
+
+str_uk_equipo_id = no nullo
+str_equipo = celular / computadora
+str_modelo = no nullo
+str_existencia = si / no 
+
+////////////////////////////////////////////////////////////
+
+TABLA AREAS
+
+str_cargo = fk_uk_empledo_id > str_nombre_cargo
+str_puesto = fk_uk_empledo_id >  f_str_area_cargo
+str_contacto = fk_uk_empledo_id >fk_uk_str_correo
+
+///////////////////////////////////////////////////////////////////
+
+TABLA TRANSPORTE 
+
+pk_uk_transporte_id
+str_uk_fk_asigando = fk_uk_empledo_id
+str_tipo
+uk_placa
+uk_num_unidad
+int_ejes
+str_hazmat
+dbl_capacidad_peso
+char_puede_cruzar = si /  no
+str_tipo_dano
+
+/////////////////////////////////////
+
+TABLA CAJA
+pk_caja_clave
+str_tipo
+str_num_caja
+uk_str_placas
+str_estado
+char_hazmat= si / no
+str_bondiciones = si / no
+
+////////////////////////////////////
+TABLA CRUCE
+
+uk_ref
+str_caja= fk_pk_caja_clave
+str_tipo = 1 / 2
+date_fecha
+date_tiempo
+str_evento
+
